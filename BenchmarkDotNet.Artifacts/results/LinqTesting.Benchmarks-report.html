@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>LinqTesting.Benchmarks-20220615-211352</title>
+<title>LinqTesting.Benchmarks-20220615-215932</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,19 +13,21 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19043.1706 (21H1/May2021Update)
-AMD Ryzen 5 2600, 1 CPU, 12 logical and 6 physical cores
-.NET SDK=6.0.201
-  [Host]     : .NET 6.0.3 (6.0.322.12309), X64 RyuJIT
-  DefaultJob : .NET 6.0.3 (6.0.322.12309), X64 RyuJIT
+BenchmarkDotNet=v0.13.1, OS=arch 
+Intel Core i7-6600U CPU 2.60GHz (Skylake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.102
+  [Host]     : .NET 6.0.2 (6.0.222.11801), X64 RyuJIT
+  DefaultJob : .NET 6.0.2 (6.0.222.11801), X64 RyuJIT
 </code></pre>
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>   Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+<thead><tr><th>                        Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
 </tr>
-</thead><tbody><tr><td>OrderByNew</td><td>167.5 &mu;s</td><td>3.34 &mu;s</td><td>4.34 &mu;s</td>
-</tr><tr><td>OrderByOriginal</td><td>236.1 &mu;s</td><td>4.05 &mu;s</td><td>3.59 &mu;s</td>
+</thead><tbody><tr><td>OrderByNew</td><td>5.041 ms</td><td>0.0667 ms</td><td>0.0592 ms</td>
+</tr><tr><td>OrderByOriginal</td><td>3.971 ms</td><td>0.0358 ms</td><td>0.0335 ms</td>
+</tr><tr><td>ConditionalQueryChainedWhereNew</td><td>18.889 ms</td><td>0.0969 ms</td><td>0.0809 ms</td>
+</tr><tr><td>ConditionalQueryChainedWhereOriginal</td><td>20.312 ms</td><td>0.0639 ms</td><td>0.0598 ms</td>
 </tr></tbody></table>
 </body>
 </html>
