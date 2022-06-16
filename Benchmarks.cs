@@ -15,7 +15,12 @@ namespace LinqTesting
             Fixture fixture = new Fixture();
             Samples = fixture.CreateMany<SampleData>(1_000_00).ToList();
         }
-
+/*
+|          Method |     Mean |   Error |  StdDev |
+|---------------- |---------:|--------:|--------:|
+|      OrderByNew | 167.5 us | 3.34 us | 4.34 us |
+| OrderByOriginal | 236.1 us | 4.05 us | 3.59 us |
+*/
         [Benchmark]
         public void OrderByNew()
         {
