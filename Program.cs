@@ -42,8 +42,22 @@ names = list.If(AcceptableNames.Any(),
 //In Case2 We know that We dont have anything to filter for so we want all results
 //Rather than checking for every item we just return.
 
-//For backing up multiple where clauses, I still should make sure that this is still true after changes.
-//https://stackoverflow.com/questions/664683/should-i-use-two-where-clauses-or-in-my-linq-query
+
+
+
+//OUT
+
+//This one life simplicity
+//The main example I use this for is when paginating data where you return a 
+//subset of the data but want to also give the amount of total data
+var orderBy = "ASC";
+names = list.If(AcceptableNames.Any(),
+                then => then.Where(x => AcceptableNames.Contains(x.Name)))
+            .If(orderBy == "ASC",
+                then => then.OrderBy(x => x.StartDate),
+                el => el.OrderByDescending(x => x.StartDate))
+            .Out(x => x.Count(), out var count)
+    .Select(x => x.Name);
 
 var foo = " asdf";
 
